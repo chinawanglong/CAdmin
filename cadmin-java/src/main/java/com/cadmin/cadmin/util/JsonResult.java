@@ -1,0 +1,55 @@
+package com.cadmin.cadmin.util;
+
+import lombok.Data;
+
+/**
+ * json返回信息格式定制
+ * @author elliot
+ * @date 2020-06-19
+ * @param <T>
+ */
+@Data
+public class JsonResult<T> {
+    private T data;
+    private String code;
+    private String msg;
+
+    /**
+     * 没有信息返回，默认code=0，提示信息为操作成功
+     */
+    public JsonResult(){
+        this.code = "0";
+        this.msg = "操作成功";
+    }
+
+    /**
+     * 无数据返回，定制返回码和提示信息
+     * @param code
+     * @param msg
+     */
+    public JsonResult(String code, String msg){
+        this.code = code;
+        this.msg = msg;
+    }
+
+    /**
+     * 有数据返回，默认code=0，提示信息为操作成功
+     * @param data
+     */
+    public JsonResult(T data){
+        this.code = "0";
+        this.data = data;
+        this.msg = "操作成功";
+    }
+
+    /**
+     * 有数据返回，定制提示信息
+     * @param data
+     * @param msg
+     */
+    public JsonResult(T data, String msg){
+        this.code = "0";
+        this.data = data;
+        this.msg = msg;
+    }
+}

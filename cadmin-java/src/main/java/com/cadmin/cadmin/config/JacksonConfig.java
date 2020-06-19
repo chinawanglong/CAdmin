@@ -14,6 +14,8 @@ import java.io.IOException;
 
 /**
  * 空字符串替换null
+ * @author elliot
+ * @date 2020-06-19
  */
 @Configuration
 public class JacksonConfig {
