@@ -1,8 +1,8 @@
-package com.cadmin.cadmin.web;
+package com.cadmin.cadmin.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Login {
+public class LoginController {
 
 }
