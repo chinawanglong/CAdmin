@@ -19,22 +19,8 @@ public class Administrator {
 
     private String username; // 用户名
 
-    private String account; // 登录账号
-
     private String password;  // 登录密码
 
-    private Integer status; // 账号状态
-
-    private String character; // 角色名称
-
-    private String remarks; // 备注
-
-    private Date createdTime; // 创建时间
-
-    private Long createdBy; // 创建人
-
-    private Date updateTime; // 更新时间
-
-    private Long updateBy; // 更新操作人
+    private Date created; // 创建时间
 
 }

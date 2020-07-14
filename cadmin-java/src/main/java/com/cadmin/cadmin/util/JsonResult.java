@@ -11,14 +11,14 @@ import lombok.Data;
 @Data
 public class JsonResult<T> {
     private T data;
-    private String code;
+    private Integer code;
     private String msg;
 
     /**
      * 没有信息返回，默认code=0，提示信息为操作成功
      */
     public JsonResult(){
-        this.code = "0";
+        this.code = 0;
         this.msg = "操作成功";
     }
 
@@ -27,7 +27,7 @@ public class JsonResult<T> {
      * @param code
      * @param msg
      */
-    public JsonResult(String code, String msg){
+    public JsonResult(Integer code, String msg){
         this.code = code;
         this.msg = msg;
     }
@@ -37,19 +37,20 @@ public class JsonResult<T> {
      * @param data
      */
     public JsonResult(T data){
-        this.code = "0";
+        this.code = 0;
         this.data = data;
         this.msg = "操作成功";
     }
 
     /**
      * 有数据返回，定制提示信息
-     * @param data
+     * @param code
      * @param msg
+     * @param data
      */
-    public JsonResult(T data, String msg){
-        this.code = "0";
-        this.data = data;
+    public JsonResult(Integer code, String msg, T data){
+        this.code = code;
         this.msg = msg;
+        this.data = data;
     }
 }
