@@ -1,6 +1,9 @@
 package com.cadmin.cadmin.util;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * json返回信息格式定制
@@ -9,7 +12,8 @@ import lombok.Data;
  * @param <T>
  */
 @Data
-public class JsonResult<T> {
+@AllArgsConstructor
+public class JsonResult<T> implements Serializable {
     private T data;
     private Integer code;
     private String msg;
