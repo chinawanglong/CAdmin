@@ -1,10 +1,10 @@
 //前端路由表
 import layout from '../layouts'
-const {BlankLayout,BasicLayout,pageView} = layout
+const { BlankLayout, BasicLayout, pageView } = layout
 const constantRouterComponents = {
     BlankLayout: BlankLayout,
     BasicLayout: BasicLayout,
-    pageView:pageView
+    pageView: pageView
 }
 const notFoundRouter = {
     path: '*', redirect: '/404', hidden: true
@@ -36,14 +36,14 @@ export const getRouterByUser = () => {
 export const generatorDynamicRouter = () => {
     return new Promise((resolve, reject) => {
         // ajax
-          setTimeout(()=>{
+        setTimeout(() => {
             const routers = buildmenu()
             routers.push(notFoundRouter)
             resolve(routers)
-          },2000)
-            
+        }, 2000)
+
         // getRouterByUser().then(res => {
-            
+
         // }).catch(err => {
         //     reject(err)
         // })
@@ -67,14 +67,14 @@ export function buildmenu(rows) {
                     component: () => import("@/views/indexDesktop/welcome"),
                     hidden: true,
                     meta: { title: "欢迎页", id: 0 }
-                  },
-                  {
-                    path:"/system",
+                },
+                {
+                    path: "/system",
                     name: "system",
                     hidden: true,
                     icon: "el-icon-message",
                     meta: { title: "系统管理", id: 1 },
-                    component:pageView,
+                    component: pageView,
                     children: [
                         {
                             path: "/system/user",
@@ -84,24 +84,34 @@ export function buildmenu(rows) {
                             meta: { title: "用户管理", id: 11 },
                             component: () => import("@/views/system/user"),
                             children: []
-                          },
-                      {
-                        path: "/system/menu",
-                        name: "menuList",
-                        hidden: true,
-                        icon: "el-icon-message",
-                        meta: { title: "菜单管理", id: 12 },
-                        component: () => import("@/views/system/menu"),
-                        children: []
-                      }
+                        },
+                        {
+                            path: "/system/role",
+                            name: "role",
+                            hidden: true,
+                            icon: "el-icon-message",
+                            meta: { title: "角色管理", id: 12 },
+                            component: () => import("@/views/system/role"),
+                            children: []
+                        },
+                        {
+                            path: "/system/menu",
+                            name: "menuList",
+                            hidden: true,
+                            icon: "el-icon-message",
+                            meta: { title: "菜单管理", id: 13 },
+                            component: () => import("@/views/system/menu"),
+                            children: []
+                        }
+
                     ]
-                  }
+                }
             ]
         }
     ]
     var arr = [];
-    if(rows){
-        buildTree(rows,arr)
+    if (rows) {
+        buildTree(rows, arr)
         arr.forEach(row => {
             menus[0].children.push(row)
         })

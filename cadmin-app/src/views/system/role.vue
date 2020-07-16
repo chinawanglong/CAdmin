@@ -33,10 +33,10 @@ export default {
         { label: '删除', type: 'danger', hidden: false, handle: (row) => { console.log('删除弹窗') } }
       ], // 对这个表格的操作按钮
       columns: [
-        { label: 'ID', prop: 'id' },
-        { label: '用户名', prop: 'name' },
-        { label: '部门', prop: 'organ' },
-        { label: '手机号', prop: 'phone' },
+        { label: '角色编号', prop: 'id' },
+        { label: '角色名称', prop: 'name' },
+        { label: '权限字符', prop: 'string' },
+        { label: '显示顺序', prop: 'order' },
         {
           label: '操作',
           type: 'Button',
@@ -47,16 +47,8 @@ export default {
         }
       ],
       tableData: [
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225' }
+        { id: '1', name: '管理员', string: 'admin', order: '1' },
+        { id: '1', name: '普通角色', string: 'common', order: '2' }
       ],
       searchForm: [{ type: 'Input', label: '用户名', prop: 'name', placeholder: '请输入用户名' }
       ],
