@@ -3,17 +3,6 @@ spring:
         active: dev
 
 
----
-# dev 开发环境
-
-spring:
-  profiles: dev
-
-server:
-  port: 8080
-
-
-
 
 
 
