@@ -1,7 +1,8 @@
 package com.cadmin.cadmin.controller;
 
 import com.cadmin.cadmin.entity.Admin;
-import com.cadmin.cadmin.util.JsonResult;
+import com.cadmin.cadmin.service.impl.AdminServiceImpl;
+import com.cadmin.cadmin.utils.JsonResult;
 import io.swagger.annotations.*;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -19,14 +20,12 @@ import javax.servlet.http.HttpServletRequest;
 @Api(tags = "后台登陆")
 public class LoginController {
 
+
+    @Autowired
+    private AdminServiceImpl adminService;
+
     @PostMapping("/login")
     @ApiOperation(value = "用户后台登陆")
-    @ApiImplicitParams({
-        @ApiImplicitParam(value = ""),
-    })
-    @ApiResponses({
-
-    })
     public JsonResult login(Admin admin, HttpServletRequest request){
         // 根据用户名和密码创建token
         UsernamePasswordToken token = new UsernamePasswordToken(admin.getUsername(), admin.getPassword());
@@ -35,8 +34,9 @@ public class LoginController {
         try{
             // 开始认证 这一步会跳转至自定义的realm中
             subject.login(token);
+            Admin adminInfo = adminService.getByUsername(admin.getUsername());
             request.getSession().setAttribute("admin", admin);
-            return new JsonResult<>(0, "登陆成功", admin);
+            return new JsonResult(0, "登陆成功", adminInfo);
         } catch (Exception e){
             e.printStackTrace();
             request.getSession().setAttribute("admin", admin);
