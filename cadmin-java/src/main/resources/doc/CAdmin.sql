@@ -29,4 +29,20 @@ create table `c_admin_role`(
 
 insert into c_admin_role values ('1','1','1'),('2','1','2'),('3','2','2'),('4','2','3');
 
+drop table if exists `c_menu`;
+
+create table `c_menu`(
+    `id` int(11) unsigned auto_increment,
+    `title` varchar(20) default null comment'菜单',
+    `name` varchar(20) default null comment'模块',
+    `path` varchar(40) default null comment'路径',
+    `is_show` enum('0','1') default '1' comment'是否显示 0 不显示 1 显示',
+    `icon` varchar(40) default null comment'icon图标',
+    `pid` int(11) default null comment'父级菜单',
+    `created` date default now(),
+    `update_time` date default now(),
+    primary key (`id`)
+)engine=innodb default charset=utf8 comment'菜单表';
+
+
 

@@ -1,4 +1,4 @@
-package com.cadmin.cadmin.util;
+package com.cadmin.cadmin.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

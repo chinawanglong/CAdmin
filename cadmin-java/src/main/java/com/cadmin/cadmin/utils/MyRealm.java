@@ -1,4 +1,4 @@
-package com.cadmin.cadmin.util;
+package com.cadmin.cadmin.utils;
 
 import com.cadmin.cadmin.entity.Admin;
 import com.cadmin.cadmin.service.impl.AdminServiceImpl;

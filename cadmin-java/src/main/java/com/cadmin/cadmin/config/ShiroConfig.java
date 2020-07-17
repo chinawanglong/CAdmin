@@ -1,6 +1,6 @@
 package com.cadmin.cadmin.config;
 
-import com.cadmin.cadmin.util.MyRealm;
+import com.cadmin.cadmin.utils.MyRealm;
 import lombok.extern.log4j.Log4j2;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
