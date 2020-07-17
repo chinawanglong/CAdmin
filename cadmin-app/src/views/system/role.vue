@@ -70,6 +70,12 @@ export default {
             v.hidden = true
           }
         })
+      }else {
+        this.tableHandles.forEach((v) => {
+          if (v.label == '删除') {
+            v.hidden = false
+          }
+        })
       }
     },
     onSubmit () {
