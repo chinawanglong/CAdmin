@@ -36,13 +36,19 @@ create table `c_menu`(
     `title` varchar(20) default null comment'菜单',
     `name` varchar(20) default null comment'模块',
     `path` varchar(40) default null comment'路径',
-    `is_show` enum('0','1') default '1' comment'是否显示 0 不显示 1 显示',
+    `is_show` tinyint(1) default 1 comment'是否显示 0 不显示 1 显示',
     `icon` varchar(40) default null comment'icon图标',
     `pid` int(11) default null comment'父级菜单',
     `created` date default now(),
     `update_time` date default now(),
     primary key (`id`)
 )engine=innodb default charset=utf8 comment'菜单表';
+
+insert into `c_menu` values
+('1', '会员管理', '/admin/user', '/menu/user', 1, '', 0, now(), now()),
+('2', '会员列表', '/admin/user/list', '/menu/user/list', 1, '', 1, now(), now()),
+('3', '会员编辑', '/admin/user/edit', '/menu/user/edit', 1, '', '1', now(), now());
+
 
 
 

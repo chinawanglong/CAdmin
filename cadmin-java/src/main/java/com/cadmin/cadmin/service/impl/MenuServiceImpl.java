@@ -34,7 +34,7 @@ public class MenuServiceImpl implements MenuService {
      * 获取树形菜单，所有可见的菜单 1可见 0不可见
      * @return
      */
-    public List<Menu> getMenuTree(){
-        return MenuUtil.getMenuTree(getMenuList(1));
+    public List<Menu> getMenuTree(Integer isShow){
+        return MenuUtil.getMenuTree(getMenuList(isShow));
     }
 }

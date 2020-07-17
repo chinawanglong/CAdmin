@@ -12,7 +12,6 @@ import java.util.List;
 public class MenuUtil {
 
     public static List<Menu> getMenuTree(List<Menu> menuRoot){
-
         List<Menu> menusResult = new ArrayList<>();
         // 一级菜单
         for (Menu menu:menuRoot){
