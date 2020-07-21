@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-dialog title="收货地址" :visible.sync="dialogFormVisible" width="600" @close="close">
+    <el-dialog title="操作" :visible.sync="dialogFormVisible" width="600" @close="close" destroy-on-close>
      <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
         <el-form-item label="用户名" :label-width="formLabelWidth" prop="name">
           <el-input
@@ -55,7 +55,11 @@ export default {
     },
     close () {
       console.log('close')
-      this.$refs.ruleForm.resetFields()
+      this.ruleForm = {
+        name: '',
+        region: '',
+        phone: ''
+      }
     },
     edit (row) {
       console.log(row, 77788)
@@ -78,3 +82,8 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+  .el-select{
+    width:100%;
+  }
+</style>

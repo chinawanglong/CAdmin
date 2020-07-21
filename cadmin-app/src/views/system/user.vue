@@ -14,7 +14,6 @@
     >
     </common-table>
     <user-modal ref="userModal" :dialogFormVisible="dialogFormVisible" @refresh="refresh"></user-modal>
-    </div>
   </div>
 </template>
 <script>
@@ -52,15 +51,15 @@ export default {
       ],
       tableData: [
         { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
-        { id: '1', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' }
+        { id: '2', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
+        { id: '3', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
+        { id: '4', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
+        { id: '5', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
+        { id: '6', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
+        { id: '7', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
+        { id: '8', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
+        { id: '9', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' },
+        { id: '10', name: '赵志伟', organ: '技术部', phone: '15755023225', region: '1' }
       ],
       searchForm: [{ type: 'Input', label: '用户名', prop: 'name', placeholder: '请输入用户名' }
       ],

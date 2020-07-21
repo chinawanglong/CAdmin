@@ -2,7 +2,7 @@
   <div class="global_header">
     <div class="header flex space_between align_center">
       <div class="collapse flex align_center">
-        <i class="el-icon-bangzhu" @click="Collapse"></i>
+        <i class="el-icon-s-fold" @click="Collapse"></i>
       </div>
       <el-dropdown split-button type="primary" @command="loginOut" @click="handleClick">
         <i class="el-icon-s-check"></i>
