@@ -1,5 +1,6 @@
 package com.cadmin.cadmin.service.impl;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cadmin.cadmin.entity.Menu;
 import com.cadmin.cadmin.mapper.MenuMapper;
 import com.cadmin.cadmin.service.MenuService;
@@ -28,6 +29,17 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public List<Menu> getMenuList(Integer isShow) {
         return menuMapper.getMenuList(isShow);
+    }
+
+    /**
+     * 获取菜单分页数据
+     *
+     * @param page
+     * @return
+     */
+    @Override
+    public Page<Menu> queryMenuList(Page page) {
+        return menuMapper.queryMenuList(page);
     }
 
     /**

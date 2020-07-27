@@ -4,4 +4,8 @@
     <select id="getMenuList" resultType="com.cadmin.cadmin.entity.Menu">
         SELECT * FROM cadmin.c_menu where is_show = #{isShow}
     </select>
+
+    <select id="queryMenuList" resultType="com.cadmin.cadmin.entity.Menu">
+        select * from cadmin.c_menu
+    </select>
 </mapper>

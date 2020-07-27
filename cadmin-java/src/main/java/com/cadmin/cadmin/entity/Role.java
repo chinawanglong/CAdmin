@@ -10,21 +10,21 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 /**
- *
+ * 角色对象
  * @author elliot
+ * @date 2020/07/27
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName(value = "c_admin")
-@ApiModel(value = "管理员表", description = "管理员对象")
-public class Admin {
+@ApiModel(value = "角色表")
+@TableName(value = "c_role")
+public class Role {
     @ApiModelProperty(value = "主键")
-    private Integer id;
-    @ApiModelProperty(value = "用户名")
-    private String username;
-    @ApiModelProperty(value = "密码")
-    private String password;
+    private Long id;
+    @ApiModelProperty(value = "角色名")
+    private String name;
     @ApiModelProperty(value = "创建时间")
     private Date created;
+
 }

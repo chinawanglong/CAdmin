@@ -1,5 +1,6 @@
 package com.cadmin.cadmin.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cadmin.cadmin.entity.Menu;
 
 import java.util.List;
@@ -16,5 +17,13 @@ public interface MenuService {
      * @return
      */
     List<Menu> getMenuList(Integer isShow);
+
+
+    /**
+     * 获取菜单分页数据
+     * @param page
+     * @return
+     */
+    Page<Menu> queryMenuList(Page page);
 
 }

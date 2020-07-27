@@ -10,7 +10,17 @@ import java.util.Set;
 @Repository
 public interface AdminMapper {
 
-    Admin getByUsername(String username);
+    /**
+     * 根据用户查询
+     * @param username
+     * @return
+     */
+    Admin selectByUsername(String username);
 
-    Set<String> getRoleByUsername(String username);
+    /**
+     * 查询角色
+     * @param username
+     * @return
+     */
+    Set<String> selectRoleByUsername(String username);
 }

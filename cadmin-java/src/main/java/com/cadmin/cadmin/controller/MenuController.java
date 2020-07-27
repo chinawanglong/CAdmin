@@ -1,10 +1,12 @@
 package com.cadmin.cadmin.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cadmin.cadmin.entity.Menu;
 import com.cadmin.cadmin.service.impl.MenuServiceImpl;
 import com.cadmin.cadmin.utils.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,11 +29,23 @@ public class MenuController {
      * 获取树形菜单
      * @return
      */
-    @GetMapping("/list")
+    @GetMapping("/treeList")
     public JsonResult getMenuTree(){
          List<Menu> menuData = menuService.getMenuTree(1);
 
          return new JsonResult(0, "菜单获取成功", menuData);
+    }
+
+
+    /**
+     * 查询菜单的分页数据
+     * @param page
+     * @return
+     */
+    @PostMapping("/list")
+    public JsonResult<Page<Menu>> queryMenuList(Page page){
+        Page<Menu> result = menuService.queryMenuList(page);
+        return new JsonResult(result);
     }
 
 }
