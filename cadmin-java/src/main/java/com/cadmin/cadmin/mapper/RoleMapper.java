@@ -16,24 +16,6 @@ import org.springframework.stereotype.Repository;
 public interface RoleMapper extends BaseMapper {
 
     /**
-     * 新增角色
-     * @param role
-     */
-    void saveRole(Role role);
-
-    /**
-     * 删除角色
-     * @param ids
-     */
-    void deleteRole(String ids);
-
-    /**
-     * 修改角色
-     * @param role
-     */
-    void updateRole(Role role);
-
-    /**
      * 角色分页查询
      * @param page
      * @param role

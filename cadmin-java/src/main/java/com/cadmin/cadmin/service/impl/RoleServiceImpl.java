@@ -64,6 +64,6 @@ public class RoleServiceImpl implements RoleService {
      */
     @Override
     public Page<Role> selectPageRole(Page page, Role role) {
-        return null;
+        return roleMapper.selectPageRole(page, role);
     }
 }

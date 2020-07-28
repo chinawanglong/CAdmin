@@ -2,6 +2,7 @@ package com.cadmin.cadmin.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -12,29 +13,58 @@ import java.io.Serializable;
  * @param <T>
  */
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class JsonResult<T> implements Serializable {
     private T data;
     private Integer code;
     private String msg;
 
-    /**
-     * 没有信息返回，默认code=0，提示信息为操作成功
-     */
-    public JsonResult(){
-        this.code = 0;
-        this.msg = "操作成功";
-    }
+
+
 
     /**
      * 无数据返回，定制返回码和提示信息
      * @param code
      * @param msg
      */
-    public JsonResult(Integer code, String msg){
-        this.code = code;
-        this.msg = msg;
+    public static JsonResult success(Integer code, String msg){
+        JsonResult jsonResult = new JsonResult();
+        jsonResult.setCode(code);
+        jsonResult.setMsg(msg);
+        return  jsonResult;
     }
+
+    /**
+     * 成功返回带数据
+     * @param code
+     * @param msg
+     * @param data
+     * @param <T>
+     * @return
+     */
+    public static <T> JsonResult<T> success(Integer code, String msg, T data){
+        JsonResult jsonResult = new JsonResult();
+        jsonResult.setCode(code);
+        jsonResult.setMsg(msg);
+        jsonResult.setData(data);
+        return jsonResult;
+    }
+
+
+    /**
+     * 失败 无数据返回
+     * @param code
+     * @param msg
+     * @return
+     */
+    public static  JsonResult fail(Integer code, String msg){
+        JsonResult jsonResult = new JsonResult();
+        jsonResult.setCode(code);
+        jsonResult.setMsg(msg);
+        return jsonResult;
+    }
+
 
     /**
      * 有数据返回，默认code=0，提示信息为操作成功
