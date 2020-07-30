@@ -36,11 +36,11 @@ public class LoginController {
             subject.login(token);
             Admin adminInfo = adminService.getByUsername(admin.getUsername());
             request.getSession().setAttribute("admin", admin);
-            return new JsonResult(0, "登陆成功", adminInfo);
+            return JsonResult.success(0, "登陆成功", adminInfo);
         } catch (Exception e){
             e.printStackTrace();
             request.getSession().setAttribute("admin", admin);
         }
-        return new JsonResult(1001, "用户名或密码错误");
+        return JsonResult.fail(1001, "用户名或密码错误");
     }
 }

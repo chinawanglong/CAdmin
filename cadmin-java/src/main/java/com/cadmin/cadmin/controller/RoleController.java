@@ -22,7 +22,10 @@ public class RoleController {
 
     @PostMapping(value = "/saveRole")
     public JsonResult saveRole(Role role){
-
+        if (null == role){
+            return JsonResult.fail(2001, "缺少必要的参数");
+        }
+        roleService.saveRole(role);
         return JsonResult.success(1, "操作成功");
     }
 
@@ -42,10 +45,6 @@ public class RoleController {
     public JsonResult<Page<Role>> selectPageRole(Page page, Role role){
         return JsonResult.success(1, "操作成功");
     }
-
-
-
-
 
 
 }

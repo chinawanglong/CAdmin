@@ -16,11 +16,12 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Admin getByUsername(String username) {
-        return adminMapper.getByUsername(username);
+        return null;
     }
 
     @Override
     public Set<String> getRoleByUsername(String username) {
-        return adminMapper.getRoleByUsername(username);
+        return null;
     }
+
 }
