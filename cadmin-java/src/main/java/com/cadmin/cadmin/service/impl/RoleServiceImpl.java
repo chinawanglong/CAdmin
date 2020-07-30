@@ -1,5 +1,6 @@
 package com.cadmin.cadmin.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cadmin.cadmin.entity.Role;
 import com.cadmin.cadmin.mapper.RoleMapper;
@@ -20,6 +21,25 @@ public class RoleServiceImpl implements RoleService {
 
     @Autowired
     private RoleMapper roleMapper;
+
+    /**
+     * 是否存在判断
+     *
+     * @param role
+     * @return
+     */
+    @Override
+    public Boolean isExist(Role role) {
+        int count;
+        // 新增判断
+        if (null == role.getId()){
+            count = roleMapper.selectCount(new QueryWrapper<Role>().eq("name", role.getName()));
+        } else {
+            // 更新判断
+            count = roleMapper.selectCount(new QueryWrapper<Role>().ne("id", role.getId()).eq("name", role.getName()));
+        }
+        return count > 0;
+    }
 
     /**
      * 新增角色

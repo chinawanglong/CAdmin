@@ -11,6 +11,13 @@ import com.cadmin.cadmin.entity.Role;
 public interface RoleService {
 
     /**
+     * 是否存在判断
+     * @param role
+     * @return
+     */
+    Boolean isExist(Role role);
+
+    /**
      * 新增角色
      * @param role
      */

@@ -21,6 +21,16 @@ public class JsonResult<T> implements Serializable {
     private String msg;
 
 
+    /**
+     * 返回不带数据
+     * @return
+     */
+    public static  JsonResult success(){
+        JsonResult jsonResult = new JsonResult();
+        jsonResult.setCode(0);
+        jsonResult.setMsg("操作成功");
+        return jsonResult;
+    }
 
 
     /**
@@ -33,6 +43,20 @@ public class JsonResult<T> implements Serializable {
         jsonResult.setCode(code);
         jsonResult.setMsg(msg);
         return  jsonResult;
+    }
+
+    /**
+     * 成功返回数据
+     * @param data
+     * @param <T>
+     * @return
+     */
+    public static <T> JsonResult<T> success(T data){
+        JsonResult jsonResult = new JsonResult();
+        jsonResult.setCode(0);
+        jsonResult.setMsg("操作成功");
+        jsonResult.setData(data);
+        return jsonResult;
     }
 
     /**

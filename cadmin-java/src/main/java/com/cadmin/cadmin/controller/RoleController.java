@@ -20,19 +20,35 @@ public class RoleController {
     private RoleServiceImpl roleService;
 
 
+    /**
+     * 新增角色
+     * @param role
+     * @return
+     */
     @PostMapping(value = "/saveRole")
     public JsonResult saveRole(Role role){
         if (null == role){
             return JsonResult.fail(2001, "缺少必要的参数");
+        }
+        if (roleService.isExist(role)){
+            return JsonResult.fail(2002, "不可重复添加");
         }
         roleService.saveRole(role);
         return JsonResult.success(1, "操作成功");
     }
 
 
+    /**
+     * 删除角色
+     * @param ids
+     * @return
+     */
     @PostMapping(value = "/deleteRole")
     public JsonResult deleteRole(String ids){
-
+        if (null == ids){
+            return JsonResult.fail(2001, "缺少必要参数");
+        }
+        roleService.deleteRole(ids);
         return JsonResult.success(1, "操作成功");
     }
 

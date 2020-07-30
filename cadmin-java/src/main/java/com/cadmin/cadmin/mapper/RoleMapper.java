@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
  */
 @Mapper
 @Repository
-public interface RoleMapper extends BaseMapper {
+public interface RoleMapper extends BaseMapper<Role> {
 
     /**
      * 角色分页查询
