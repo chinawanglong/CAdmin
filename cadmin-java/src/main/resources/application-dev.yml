@@ -2,6 +2,13 @@ spring:
   profiles:
     active: dev
 
+  jackson:
+    # 时间格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    # 时区
+    time-zone:
+      UTC
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/cadmin?useUnicode=true&charsetEncoding=utf8&serverTimezone=UTC
