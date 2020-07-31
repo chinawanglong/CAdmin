@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -21,7 +22,7 @@ import java.util.Date;
 @AllArgsConstructor
 @ApiModel(value = "角色表")
 @TableName(value = "c_role")
-public class Role {
+public class Role implements Serializable {
     private static final Long serialVersionUID = 1L;
     @ApiModelProperty(value = "主键")
     @TableId(value = "id", type = IdType.AUTO)

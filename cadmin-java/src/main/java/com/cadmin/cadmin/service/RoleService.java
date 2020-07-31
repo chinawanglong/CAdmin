@@ -38,8 +38,8 @@ public interface RoleService {
 
     /**
      * 分页查询角色
-     * @param page
-     * @param role
+     * @param page 分页参数
+     * @param role 查询对象
      * @return
      */
     Page<Role> selectPageRole(Page page, Role role);
