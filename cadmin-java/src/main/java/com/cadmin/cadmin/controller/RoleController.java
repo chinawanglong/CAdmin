@@ -54,6 +54,7 @@ public class RoleController {
             return JsonResult.fail(2001, "缺少必要参数");
         }
         roleService.deleteRole(ids);
+        // @todo 角色删除的同时，删除用户和相关角色关联关系
         return JsonResult.success(1, "操作成功");
     }
 

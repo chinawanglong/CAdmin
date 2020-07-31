@@ -1,5 +1,6 @@
 package com.cadmin.cadmin.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cadmin.cadmin.entity.Menu;
 import org.apache.ibatis.annotations.Mapper;
@@ -12,7 +13,7 @@ import java.util.List;
  */
 @Mapper
 @Repository
-public interface MenuMapper {
+public interface MenuMapper extends BaseMapper<Menu> {
 
     /**
      * 获取所有显示的菜单
@@ -21,12 +22,12 @@ public interface MenuMapper {
      */
     List<Menu> getMenuList(Integer isShow);
 
-
     /**
-     * 查询菜单分页数据
-     * @param page current（当前页）+size（每页显示）
+     * 查询菜单的分页数据
+     * @param page
+     * @param menu
      * @return
      */
-    Page<Menu> queryMenuList(Page page);
+    Page<Menu> selectPageMenu(Page page, Menu menu);
 
 }

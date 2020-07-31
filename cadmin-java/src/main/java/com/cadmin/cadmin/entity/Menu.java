@@ -21,6 +21,9 @@ import java.util.List;
 @AllArgsConstructor
 @TableName(value = "c_menu")
 public class Menu implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     @TableId(type = IdType.AUTO)
     private Long id;
     @ApiModelProperty("菜单名")
@@ -35,6 +38,8 @@ public class Menu implements Serializable {
     private String icon;
     @ApiModelProperty("父级菜单")
     private Long pid;
+    @ApiModelProperty(value = "排序")
+    private Integer sort;
     @ApiModelProperty("创建时间")
     private Date created;
     @ApiModelProperty("更新时间")

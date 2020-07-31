@@ -5,7 +5,13 @@
         SELECT * FROM cadmin.c_menu where is_show = #{isShow}
     </select>
 
-    <select id="queryMenuList" resultType="com.cadmin.cadmin.entity.Menu">
+    <select id="selectPageMenu" resultType="com.cadmin.cadmin.entity.Menu">
         select * from cadmin.c_menu
+        <where>
+            <if test="menu.title != null and menu.title != ''">
+                and title like concat("%",#{menu.title}, "%")
+            </if>
+        </where>
+        order by sort
     </select>
 </mapper>
